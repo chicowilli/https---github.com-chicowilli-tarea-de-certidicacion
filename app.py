@@ -1,26 +1,40 @@
 from flask import Flask, app, render_template, request, redirect
 
+
 app = Flask(__name__)
+lista_registros = []
 
 @app.route('/')
-def index():    
-    return render_template('index.html')
+def inicio():
+    return render_template('registro.html')
 
-@app.route('/inicio.html', methods=['POST'])
-def submit():
+@app.route('/lista')
+def lista():
+    return render_template('lista.html', registros=lista_registros)
 
+@app.route('/registro')
+def registro():
+
+    return render_template('registro.html')
+
+@app.route('/procesar_registro', methods=['POST'])
+def procesar_registro():
     nombre = request.form['nombre']
     apellido = request.form['apellido']
-    password = request.form['password']
-    email = request.form['email']
+    edad = request.form['edad']
 
-    # Here you can process the form data, e.g., save it to a database or send an email
+    registro = {
+        'nombre': nombre,
+        'apellido': apellido,
+        'edad': edad
+    }
 
-    return redirect('/')  # Redirect back to the index page after submission    
+    lista_registros.append(registro)
+
+    return redirect('/lista')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 
 

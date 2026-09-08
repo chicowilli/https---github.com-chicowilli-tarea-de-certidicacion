@@ -8,13 +8,13 @@
 </head>
 <body>
     <main>
-        <div class="registro">
+        <form class="registro" action="/procesar_registro" method="POST">
             <h1>Registro</h1>
             <p>Nombre: <input type="text" name="nombre" required></p>
             <p>Apellido: <input type="text" name="apellido" required></p>
             <p>Edad: <input type="number" name="edad" required></p>
-            <button type="submit">Enviar</button>
-        </div> 
+            <input type="submit" value="Registrar">
+        </form> 
     </main>
 </body>
 </html>

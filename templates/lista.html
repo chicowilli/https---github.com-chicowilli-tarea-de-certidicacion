@@ -15,12 +15,16 @@
                 <th class="t1">Apellido</th>
                 <th class="t1">Edad</th>
             </tr>
+            {% for registro in registros %}
             <tr class="tr">
-                <td class="t2"><input type="text" name="nombre" required></td>
-                <td class="t2"><input type="text" name="apellido" required></td>
-                <td class="t2"><input type="number" name="edad" required></td>
+                <td class="t2">{{ registro.nombre }}</td>
+                <td class="t2">{{ registro.apellido }}</td>
+                <td class="t2">{{ registro.edad }}</td>
             </tr>
+            {% endfor %}
+        </table>
     </main>
+    <button class="btn"><a href="/registro">Registrar</a></button>
 
      
 </body>
