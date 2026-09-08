@@ -1,0 +1,13 @@
+
+.Inicio{
+    background-color: #fcfcfc;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+
+}
+
+main{
+    display: flex;
+}
